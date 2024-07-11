@@ -7,6 +7,7 @@ import javax.enterprise.inject.Produces;
 public class DefaultColorExposed {
 
     @Produces
+    @Diesel
     public Color exposeDefaultColor() {
         return Color.GREY;
     }
