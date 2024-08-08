@@ -9,6 +9,7 @@ import com.leonardo.learning_java_ee.entity.Specification;
 import javax.ejb.Stateless;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
+import java.util.List;
 
 @Stateless
 public class CarManufacturer {
@@ -33,4 +34,7 @@ public class CarManufacturer {
 	}
 
 
+	public List<Car> retrieveCars() {
+		return carRepository.retrieveCars();
+	}
 }

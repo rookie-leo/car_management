@@ -1,0 +1,3 @@
+./buildAndRun.sh
+GET curl localhost:4848/cars/resource/cars -i
+POST curl localhost:4848/cars/resource/cars -i -XPOST -H 'content-type: application/json' -d '{"engineType":"DIESEL", "color":"RED"}'
