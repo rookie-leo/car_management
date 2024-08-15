@@ -4,11 +4,14 @@ import com.leonardo.learning_java_ee.control.CarFactory;
 import com.leonardo.learning_java_ee.control.CarRepository;
 import com.leonardo.learning_java_ee.entity.Car;
 import com.leonardo.learning_java_ee.entity.CarCreated;
+import com.leonardo.learning_java_ee.entity.EngineType;
 import com.leonardo.learning_java_ee.entity.Specification;
+import com.leonardo.learning_java_ee.entity.enums.Color;
 
 import javax.ejb.Stateless;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
+import java.util.Arrays;
 import java.util.List;
 
 @Stateless
@@ -35,6 +38,10 @@ public class CarManufacturer {
 
 
 	public List<Car> retrieveCars() {
-		return carRepository.retrieveCars();
+//		return carRepository.retrieveCars();
+		return Arrays.asList(carFactory
+				.createCar(
+						new Specification(Color.BLACK, EngineType.PETROL)
+				));
 	}
 }
